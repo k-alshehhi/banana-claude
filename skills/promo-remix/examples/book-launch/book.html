@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;background:transparent;}
+  .stage{width:1000px;height:1000px;perspective:2600px;display:flex;align-items:center;justify-content:center;}
+  .book{--W:420px;--H:600px;--D:86px;position:relative;width:var(--W);height:var(--H);transform-style:preserve-3d;
+        transform:rotateX(-10deg) rotateY(30deg) rotateZ(-6deg);}
+  .f{position:absolute;left:0;top:0;backface-visibility:hidden;}
+  .front{width:var(--W);height:var(--H);transform:translateZ(calc(var(--D)/2));
+    background:#F7EFE6;border-radius:4px 10px 10px 4px;overflow:hidden;
+    box-shadow:inset 6px 0 10px rgba(0,0,0,.12);}
+  .front::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(115deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 35%,rgba(0,0,0,0) 70%,rgba(0,0,0,.10) 100%);}
+  .hinge{position:absolute;left:16px;top:0;bottom:0;width:4px;background:linear-gradient(90deg,rgba(0,0,0,.14),rgba(255,255,255,.4),rgba(0,0,0,.06));}
+  .front .top{position:absolute;left:44px;top:44px;font:600 17px/1 "DejaVu Sans Mono";letter-spacing:.32em;color:#FF4500;}
+  .front .title{position:absolute;left:40px;top:96px;font:900 104px/0.86 "Inter Display";letter-spacing:-.045em;color:#0B0A0D;}
+  .front .title .o{color:#FF4500}
+  .front .disc{position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:#FF4500;}
+  .front .disc2{position:absolute;right:70px;bottom:100px;width:58px;height:58px;border-radius:50%;background:#0B0A0D;}
+  .front .bar{position:absolute;left:44px;bottom:118px;width:120px;height:10px;background:#0B0A0D;}
+  .front .auth{position:absolute;left:44px;bottom:48px;font:700 22px/1 "Inter";letter-spacing:.18em;color:#0B0A0D;}
+  .spine{width:var(--D);height:var(--H);transform:rotateY(-90deg) translateZ(calc(var(--D)/2));
+    background:linear-gradient(90deg,#050407 0%,#1A181D 22%,#26232A 50%,#151317 85%,#050407 100%);
+    border-radius:8px 0 0 8px;}
+  .spine span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg);white-space:nowrap;
+    font:900 30px/1 "Inter Display";letter-spacing:-.01em;color:#F7EFE6;}
+  .spine i{position:absolute;left:14px;right:14px;height:4px;background:#F7EFE6;opacity:.85}
+  .pages{width:var(--D);height:var(--H);left:calc(var(--W) - var(--D));transform:rotateY(90deg) translateZ(calc(var(--D)/2));
+    background:repeating-linear-gradient(90deg,#F2E8DA 0 2px,#E2D5C3 2px 3px),#EFE4D4;
+    box-shadow:inset 0 0 18px rgba(120,80,40,.25);}
+  .topf{width:var(--W);height:var(--D);transform:rotateX(90deg) translateZ(calc(var(--D)/2));
+    background:repeating-linear-gradient(0deg,#F4EBDE 0 2px,#E4D7C6 2px 3px);}
+  .bottomf{width:var(--W);height:var(--D);top:calc(var(--H) - var(--D));transform:rotateX(-90deg) translateZ(calc(var(--D)/2));background:#D8CAB6;}
+  .back{width:var(--W);height:var(--H);transform:rotateY(180deg) translateZ(calc(var(--D)/2));background:#E9DED0;}
+</style></head>
+<body>
+<div class="stage"><div class="book">
+  <div class="f back"></div>
+  <div class="f bottomf"></div>
+  <div class="f topf"></div>
+  <div class="f pages"></div>
+  <div class="f spine"><i style="top:40px"></i><span>THE NEW CHAPTER</span><i style="bottom:40px"></i></div>
+  <div class="f front">
+    <div class="hinge"></div>
+    <div class="disc"></div><div class="disc2"></div>
+    <div class="top">A NOVEL</div>
+    <div class="title">THE<br>NEW<br>CHAP<br>TER<span class="o">.</span></div>
+    <div class="bar"></div>
+    <div class="auth">VOL. 01</div>
+  </div>
+</div></div>
+</body></html>
