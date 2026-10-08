@@ -1,0 +1,434 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Book Launch</title>
+<style>
+:root{--or:#FF4500;--dk:#0B0A0E;--cr:#F6F1EC;--cr2:#FBE6DA;--mono:"DejaVu Sans Mono",monospace;--disp:"Inter Display","Inter",sans-serif;}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--dk);font-family:var(--disp)}
+.sc{position:absolute;inset:0;display:none;overflow:hidden}
+.abs{position:absolute}
+.center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.big{font-weight:900;letter-spacing:-.045em;line-height:1;white-space:nowrap}
+.mono{font-family:var(--mono)}
+.photo{background-size:cover;background-position:center}
+/* chrome */
+#chrome{position:absolute;inset:0;pointer-events:none;z-index:50}
+#chrome .br{position:absolute;width:26px;height:26px;border-color:rgba(255,255,255,.35);border-style:solid;border-width:0}
+#chrome .tl{left:48px;top:48px;border-left-width:2px;border-top-width:2px}
+#chrome .trr{right:48px;top:48px;border-right-width:2px;border-top-width:2px}
+#chrome .bl{left:48px;bottom:48px;border-left-width:2px;border-bottom-width:2px}
+#chrome .brr{right:48px;bottom:48px;border-right-width:2px;border-bottom-width:2px}
+#chrome .lab{position:absolute;left:86px;top:72px;font:15px var(--mono);color:rgba(255,255,255,.55)}
+#chrome .tc{position:absolute;right:86px;bottom:66px;font:15px var(--mono);color:rgba(255,255,255,.5)}
+#chrome .tc b{color:rgba(255,255,255,.85);font-weight:400;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:4px}
+/* cards */
+.card{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.12)}
+.chip{position:absolute;left:20px;bottom:18px;font:15px var(--mono);padding:5px 9px;border-radius:5px;background:rgba(255,255,255,.88);color:#111}
+.chip.dk{background:rgba(255,255,255,.08);color:#ddd}
+.book{position:absolute;filter:drop-shadow(0 40px 34px rgba(90,20,0,.45))}
+.bars{position:absolute;display:flex;align-items:flex-end;gap:2.2%}
+.bars i{display:block;background:var(--dk);border-radius:3px 3px 0 0}
+.bars i:last-child{background:var(--or)}
+/* code */
+.code{font:27px/46px var(--mono);color:#E6E1DC;white-space:pre}
+.code .ln{color:#55525C;display:inline-block;width:46px}
+.k{color:#B39DFF}.tg{color:#FF7A45}.s{color:#A6E08F}.n{color:#F0C674}.a{color:#E6E1DC}
+.cur{display:inline-block;width:15px;height:32px;background:var(--or);vertical-align:-6px;margin-left:4px}
+.track{position:absolute;left:335px;width:1460px;height:118px;background:#18171C;border-radius:8px}
+.tlab{position:absolute;left:115px;font:22px var(--mono);letter-spacing:.06em;color:#FFB49A}
+.tlab small{display:block;font-size:15px;color:#77737E;margin-top:12px;letter-spacing:0}
+.clip{position:absolute;top:12px;height:94px;border-radius:5px;overflow:hidden}
+.wave{position:absolute;inset:6px;display:flex;align-items:center;gap:5px;overflow:hidden}
+.wave i{flex:0 0 8px;background:var(--or);border-radius:1px}
+</style></head>
+<body>
+<div id="stage">
+
+  <!-- S1 TYPE IT. -->
+  <div class="sc" id="s1" style="background:var(--or)">
+    <div class="center"><div style="overflow:hidden;padding:0 20px"><div id="s1t" class="big" style="font-size:210px;color:var(--dk)">TYPE IT.</div></div></div>
+  </div>
+
+  <!-- S2 MAKE IT -->
+  <div class="sc" id="s2">
+    <div class="center"><div id="s2t" class="big" style="font-size:210px;color:var(--cr)">MAKE IT</div></div>
+    <div id="s2sq" class="abs" style="background:var(--cr);border-radius:16px"></div>
+  </div>
+
+  <!-- S3 WATCH -->
+  <div class="sc" id="s3" style="background:var(--cr)">
+    <div class="center"><div id="s3t" class="big" style="font-size:210px;color:var(--or);transform:skewX(-8deg)">WATCH<span style="display:inline-block;width:70px;height:26px;background:var(--or);opacity:.45;transform:rotate(-55deg) translateY(-20px);margin-left:30px"></span></div></div>
+    <div id="s3p" class="abs" style="top:0;bottom:0;width:2200px;background:var(--dk)"></div>
+  </div>
+
+  <!-- S4 MOVE -->
+  <div class="sc" id="s4">
+    <div class="center"><div style="display:flex;gap:6px;align-items:flex-end">
+      <div class="mv" style="overflow:hidden"><div class="big mvl" style="font-size:300px;color:transparent;background:url(assets/mountain.jpg) center/cover;-webkit-background-clip:text;background-clip:text">M</div></div>
+      <div class="mv" style="overflow:hidden"><div class="big mvl" style="font-size:300px;color:transparent;background:url(assets/book.png) 50% 40%/52% no-repeat,radial-gradient(circle,#FF7A3A,#FF4500);-webkit-background-clip:text;background-clip:text">O</div></div>
+      <div class="mv" style="overflow:hidden"><div class="big mvl" style="font-size:300px;color:transparent;background:url(assets/city.jpg) center/cover;-webkit-background-clip:text;background-clip:text">V</div></div>
+      <div class="mv" style="overflow:hidden"><div class="big mvl" style="font-size:300px;color:var(--or)">E</div></div>
+      <div id="s4cur" style="width:70px;height:220px;background:var(--or);margin:0 0 34px 18px"></div>
+    </div></div>
+    <div class="abs mono" id="s4labs" style="left:0;right:0;top:720px;display:flex;justify-content:center;gap:150px;font-size:14px;color:rgba(255,255,255,.4)"><span>brand film</span><span>product launch</span><span>social reel</span><span>&nbsp;</span></div>
+    <div id="s4p" class="abs" style="top:0;bottom:0;width:2200px;background:var(--or)"></div>
+  </div>
+
+  <!-- S5 NEW + book -->
+  <div class="sc" id="s5" style="background:radial-gradient(circle at 50% 45%,#FF7433 0%,#FF4F0A 45%,#F04000 100%)">
+    <div id="s5in" class="abs" style="inset:0">
+      <div class="center"><div class="big" style="font-size:470px;color:var(--cr2);letter-spacing:-.03em">NEW</div></div>
+      <div class="abs" style="left:960px;top:560px;width:640px;height:60px;margin-left:-320px;border-radius:50%;background:radial-gradient(rgba(120,30,0,.45),transparent 70%)"></div>
+      <img class="book" id="s5b" src="assets/book.png" style="height:560px;left:50%;top:50%">
+    </div>
+    <div id="s5c" class="abs photo" style="left:0;width:340px;height:420px;background-image:url(assets/city.jpg)"></div>
+  </div>
+
+  <!-- S6 triptych -> grid -->
+  <div class="sc" id="s6">
+    <div id="s6a" class="abs photo" style="background-image:url(assets/city.jpg)"><div class="big abs" style="left:22px;bottom:34%;font-size:66px;line-height:.82;color:#fff">after<br>dark</div></div>
+    <div id="s6b" class="abs" style="background:var(--cr);overflow:hidden">
+      <div class="big abs" style="left:9%;top:36%;font-size:80px;color:var(--dk);letter-spacing:-.03em">+48%</div>
+      <div class="bars" style="left:9%;right:9%;top:52%;height:12%"><i style="flex:1;height:52%"></i><i style="flex:1;height:75%"></i><i style="flex:1;height:60%"></i><i style="flex:1;height:92%"></i><i style="flex:1;height:72%"></i><i style="flex:1;height:100%"></i></div>
+    </div>
+    <div id="s6c" class="abs photo" style="background-image:url(assets/mountain.jpg)"><div class="abs" style="left:0;right:0;top:44%;text-align:center;font:500 56px var(--disp);letter-spacing:.32em;color:#fff">NORTH</div></div>
+    <div id="s6d" class="abs" style="background:var(--or);overflow:hidden"><div class="center"><div class="big" style="font-size:110px;color:var(--cr2)">NEW</div></div><img src="assets/book.png" class="abs" style="height:72%;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg)"></div>
+    <div id="s6e" class="abs" style="background:var(--dk)"><div class="center"><div class="big" style="font-size:80px;color:var(--or)">BOLD</div></div></div>
+    <div id="s6f" class="abs" style="background:var(--dk)"><div class="wave" id="s6wave" style="inset:22% 18%;gap:4px"></div></div>
+  </div>
+
+  <!-- S7 terminal prompt -->
+  <div class="sc" id="s7">
+    <div class="center"><div id="s7t" class="mono" style="font-size:30px;color:var(--cr);white-space:pre"></div></div>
+    <div class="abs mono" style="right:86px;top:72px;font-size:15px;color:rgba(255,255,255,.4)">new prompt</div>
+  </div>
+
+  <!-- S8 logo -->
+  <div class="sc" id="s8">
+    <div class="center"><div id="s8ring" style="position:absolute;border-radius:50%;border:2px solid rgba(255,69,0,.35)"></div></div>
+    <div class="center"><svg id="s8logo" width="200" height="200" viewBox="-10 -10 120 120" style="overflow:visible">
+      <path id="s8path" d="M0 0H55V33H100V67H55V100H0V66H45V34H0Z" fill="none" stroke="#FF4500" stroke-width="8" stroke-linejoin="round"/>
+    </svg></div>
+    <div class="center"><div id="s8sq" style="background:var(--or);border-radius:28px"></div></div>
+  </div>
+
+  <!-- S9 PROMPT. CODE. MOTION. -->
+  <div class="sc" id="s9" style="background:var(--or)">
+    <div class="center"><div style="position:relative">
+      <div id="s9w" class="big" style="font-size:250px;color:var(--dk)">PROMPT.</div>
+      <div id="s9u" class="abs" style="left:4%;bottom:-36px;height:12px;background:var(--dk);border-radius:6px"></div>
+    </div></div>
+    <div id="s9g" class="abs" style="inset:0"></div>
+    <div class="abs mono" style="left:86px;bottom:66px;font-size:15px;color:rgba(0,0,0,.45)">01 — one prompt</div>
+    <div class="abs mono" style="right:86px;bottom:66px;font-size:15px;color:rgba(0,0,0,.45)">00:07 / 00:28</div>
+  </div>
+
+  <!-- S10 code editor -->
+  <div class="sc" id="s10">
+    <div id="s10frame" class="abs" style="left:48px;top:48px;right:48px;bottom:48px;border:2px solid rgba(255,69,0,.85);background:repeating-linear-gradient(45deg,rgba(255,69,0,.07) 0 2px,transparent 2px 14px)">
+      <div class="abs mono" style="right:16px;top:12px;font-size:14px;color:rgba(255,255,255,.45)">canvas · 1920 × 1080 · 60 fps</div>
+      <div class="abs" style="left:-6px;top:-6px;width:10px;height:10px;background:var(--or)"></div>
+      <div class="abs" style="right:-6px;bottom:-6px;width:10px;height:10px;background:var(--or)"></div>
+    </div>
+    <div class="abs mono" style="left:86px;top:72px;font-size:15px;color:rgba(255,255,255,.55)">02 — built with react + motion</div>
+    <div id="s10new" class="abs" style="inset:0">
+      <div class="center"><div class="big" style="font-size:560px;color:transparent;-webkit-text-stroke:3px rgba(246,241,236,.5);transform:translate(220px,40px)">NEW</div></div>
+      <img id="s10ghost" src="assets/book.png" class="abs" style="height:520px;left:1080px;top:300px;filter:grayscale(1) brightness(.55);opacity:.55">
+      <div id="s10sel" class="abs" style="left:1020px;top:270px;width:470px;height:600px;border:2px dashed var(--or)"><div class="abs mono" style="left:-2px;top:-30px;font-size:14px;background:var(--or);color:#fff;padding:3px 7px">book.png · spin</div></div>
+    </div>
+    <div style="position:absolute;inset:0;perspective:2200px">
+      <div id="s10ed" class="abs" style="left:110px;top:230px;width:1180px;height:560px;background:rgba(28,27,33,.94);border:1px solid #2C2A31;border-radius:12px;box-shadow:0 40px 80px rgba(0,0,0,.5);transform-origin:0 50%">
+        <div style="height:56px;border-bottom:1px solid #2C2A31;display:flex;gap:34px;padding:0 26px;align-items:flex-end;font:17px var(--mono)">
+          <div style="color:#ddd;padding-bottom:14px;border-bottom:2px solid var(--or)">Launch.tsx</div><div style="color:#5d5a63;padding-bottom:16px">title.tsx</div>
+        </div>
+        <div id="s10hl" class="abs" style="left:0;right:0;height:46px;background:rgba(255,69,0,.22);border-left:3px solid var(--or)"></div>
+        <div id="s10code" class="code abs" style="left:24px;top:76px"></div>
+        <div class="abs mono" style="left:20px;bottom:12px;font-size:13px;color:#5d5a63">react · framer-motion · tsx</div>
+      </div>
+    </div>
+    <div id="s10ci" class="big abs" style="left:110px;bottom:120px;font-size:110px;color:#fff">Code in.</div>
+  </div>
+
+  <!-- S11 film out -->
+  <div class="sc" id="s11" style="background:var(--cr)">
+    <div id="s11card" class="abs" style="background:var(--or);overflow:hidden">
+      <div class="center"><div class="big" style="font-size:600px;color:var(--cr2);letter-spacing:-.03em">NEW</div></div>
+      <img class="book" id="s11b" src="assets/book.png" style="height:680px;left:50%;top:50%">
+      <div id="s11fo" class="big abs" style="left:70px;bottom:150px;font-size:96px;color:var(--dk)">Film out.</div>
+      <div class="abs mono" style="left:70px;bottom:62px;font-size:34px;padding:12px 22px;border-radius:12px;background:var(--cr2);color:#111">product launch</div>
+    </div>
+    <div id="s11scan" class="abs" style="top:0;bottom:0;width:40px;background:linear-gradient(90deg,transparent,rgba(255,140,80,.9),#fff,rgba(255,140,80,.9),transparent)"></div>
+  </div>
+
+  <!-- S12 grid -->
+  <div class="sc" id="s12" style="background:var(--cr)">
+    <div id="s12cam" class="abs" style="left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background-image:linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);background-size:96px 96px">
+      <div class="card" style="left:128px;top:226px;width:520px;height:292px;background:var(--or)">
+        <div class="center"><div class="big" style="font-size:180px;color:var(--cr2);letter-spacing:-.03em">NEW</div></div>
+        <img id="g1b" src="assets/book.png" class="abs" style="height:230px;left:50%;top:50%;filter:drop-shadow(0 14px 12px rgba(90,20,0,.4))">
+        <div class="chip">product launch</div>
+      </div>
+      <div class="card" style="left:700px;top:226px;width:520px;height:292px;background:var(--dk)">
+        <div class="center"><div id="g2w" class="big" style="font-size:150px;color:#fff;text-shadow:-14px 6px 0 var(--or)">BOLD</div></div>
+        <div class="chip dk">kinetic type</div>
+      </div>
+      <div class="card" style="left:1272px;top:226px;width:520px;height:292px;background:#EFE6DC">
+        <div class="big abs" style="left:34px;top:22px;font-size:62px;color:var(--dk);letter-spacing:-.03em">+48%</div>
+        <div id="g3bars" class="bars" style="left:40px;right:40px;bottom:52px;height:150px"><i style="flex:1"></i><i style="flex:1"></i><i style="flex:1"></i><i style="flex:1"></i><i style="flex:1"></i><i style="flex:1"></i></div>
+        <div class="chip">data story</div>
+      </div>
+      <div class="card" style="left:128px;top:558px;width:520px;height:292px;background:#FFB49A">
+        <svg id="g4" class="abs" style="left:0;top:0" width="520" height="292" viewBox="0 0 520 292"></svg>
+        <div class="chip">explainer</div>
+      </div>
+      <div class="card" style="left:700px;top:558px;width:520px;height:292px;background:#141317">
+        <div class="abs photo" style="left:192px;top:20px;width:138px;height:252px;border-radius:16px;border:3px solid #444;background-image:url(assets/city.jpg)"><div class="big abs" style="left:12px;bottom:40px;font-size:40px;line-height:.82;color:#fff">after<br>dark</div></div>
+        <div class="chip dk">social reel</div>
+      </div>
+      <div class="card photo" style="left:1272px;top:558px;width:520px;height:292px;background-image:url(assets/mountain.jpg);background-position:50% 30%">
+        <div class="abs" style="left:0;right:0;top:40%;text-align:center;font:500 70px var(--disp);letter-spacing:.3em;color:#fff">NORTH</div>
+        <div class="chip dk" style="background:rgba(0,0,0,.45)">brand film</div>
+      </div>
+    </div>
+    <div class="abs mono" style="left:115px;top:72px;font-size:22px;color:#222">03 — anything you can describe</div>
+    <div id="s12lab" class="abs big" style="left:106px;top:112px;font-size:76px;color:#fff;background:var(--dk);padding:6px 20px 14px;border-radius:8px">Launches.</div>
+  </div>
+
+  <!-- S13 timeline -->
+  <div class="sc" id="s13">
+    <div class="abs mono" style="left:115px;top:80px;font-size:22px;color:#FFB49A">04 — generated for you, in one place</div>
+    <div id="s13t" class="abs big" style="left:112px;top:118px;font-size:104px;color:var(--or)">Images.</div>
+    <div id="s13badge" class="abs" style="left:1370px;top:146px;width:436px;height:76px;border-radius:38px;background:#1A191E;border:1px solid #2E2C33;display:flex;align-items:center;padding-left:34px;gap:20px">
+      <span style="font:900 40px var(--disp);color:#fff">&#10073;&#10073;</span><span style="font:700 36px var(--disp);color:#fff;letter-spacing:-.02em">ElevenLabs</span>
+      <span class="mono" style="font-size:15px;color:#8a8590;border-left:1px solid #3a3840;padding-left:14px;line-height:1.3">BUILT IN<br>voices</span>
+    </div>
+    <div id="s13rows">
+      <div class="tlab" style="top:412px">IMAGES</div>
+      <div class="tlab" style="top:540px">MUSIC<small>&#10073;&#10073; ElevenLabs</small></div>
+      <div class="tlab" style="top:692px">VIDEO</div>
+      <div class="tlab" style="top:820px">VOICEOVER<small>&#10073;&#10073; ElevenLabs</small></div>
+      <div class="track" style="top:367px" id="trI"></div>
+      <div class="track" style="top:508px" id="trM"></div>
+      <div class="track" style="top:650px" id="trV"></div>
+      <div class="track" style="top:790px" id="trO"></div>
+    </div>
+    <div id="s13ph" class="abs" style="top:308px;width:4px;height:610px;background:var(--or)"><div class="abs" style="left:-14px;top:0;width:32px;height:52px;background:var(--or);border-radius:4px"></div></div>
+    <div class="abs mono" id="s13rl" style="left:1305px;top:962px;font-size:22px;color:#aaa">rendering…</div>
+    <div class="abs mono" id="s13pc" style="right:120px;top:962px;font-size:22px;color:#eee;text-align:right">0%</div>
+    <div class="abs" style="left:1305px;top:1004px;width:495px;height:6px;background:#2A2830;border-radius:3px"><div id="s13bar" style="height:100%;width:0;background:var(--or);border-radius:3px"></div></div>
+    <div id="s13wipe" class="abs" style="top:0;bottom:0;width:1920px;background:var(--cr)"></div>
+  </div>
+
+  <!-- S14 outro -->
+  <div class="sc" id="s14">
+    <div class="center"><div id="s14w" class="big" style="font-size:180px;color:#fff">Describe it.</div></div>
+    <div id="s14brand" class="abs" style="inset:0">
+      <div id="s14lw" class="abs" style="left:0;right:0;top:340px;display:flex;justify-content:center;align-items:center;gap:34px">
+        <svg id="s14logo" width="150" height="150" viewBox="-10 -10 120 120"><path d="M0 0H55V33H100V67H55V100H0V66H45V34H0Z" fill="#FF4500" stroke="#FF4500" stroke-width="8" stroke-linejoin="round"/></svg>
+        <div style="overflow:hidden"><div id="s14word" style="font:500 170px/1.1 var(--disp);letter-spacing:-.035em;color:#F2EEE9">Replit</div></div>
+      </div>
+      <div class="abs" style="left:0;right:0;top:560px;text-align:center;overflow:hidden;height:150px"><div id="s14anim" style="display:inline-block;position:relative;font:800 92px/1.2 var(--disp);letter-spacing:-.04em;color:#F2EEE9">Animation<span style="color:var(--or)">.</span><div id="s14ul" class="abs" style="left:0;bottom:6px;height:5px;background:var(--or)"></div></div></div>
+      <div id="s14tag" class="abs mono" style="left:0;right:0;top:720px;text-align:center;font-size:22px;color:#9a96a0;white-space:pre"></div>
+    </div>
+    <div id="s14end" class="center mono" style="font-size:30px;color:var(--or)"></div>
+  </div>
+
+  <div id="chrome"><div class="br tl"></div><div class="br trr"></div><div class="br bl"></div><div class="br brr"></div>
+    <div class="lab" id="chl">replit animation</div><div class="tc"><span id="chk">make</span> · <b id="chtc">00:00:00:00</b></div></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const p=(t,a,b)=>cl((t-a)/(b-a));
+const lerp=(a,b,k)=>a+(b-a)*k;
+const eo=k=>1-Math.pow(1-k,3);
+const eio=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+const ex=k=>k>=1?1:1-Math.pow(2,-10*k);
+const eb=k=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+function S(el,o){el=typeof el==='string'?$(el):el;for(const k in o)el.style[k]=o[k];}
+function show(id,on){$(id).style.display=on?'block':'none';}
+function blurIn(el,t,t0,d=.25,from=26){const k=eo(p(t,t0,t0+d));S(el,{opacity:k,filter:`blur(${(1-k)*from}px)`});return k;}
+function rnd(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+
+// ---- build static bits
+(function(){
+  const w=$('s6wave');for(let i=0;i<40;i++){const e=document.createElement('i');e.style.height=(25+70*rnd(i))+'%';w.appendChild(e);}
+  // explainer face
+  $('g4').innerHTML=`<circle cx="110" cy="100" r="24" fill="#0B0A0E"/><line x1="110" y1="100" x2="160" y2="140" stroke="#0B0A0E" stroke-width="4"/>
+   <circle cx="410" cy="94" r="24" fill="#0B0A0E"/><line x1="410" y1="94" x2="360" y2="120" stroke="#0B0A0E" stroke-width="4"/>
+   <circle id="g4n" cx="260" cy="180" r="24" fill="#FF4500"/><line x1="226" y1="182" x2="294" y2="174" stroke="#0B0A0E" stroke-width="3"/>`;
+  // timeline clips
+  const thumb=(x,w,kind)=>{const d=document.createElement('div');d.className='clip';S(d,{left:x+'px',width:w+'px'});
+    if(kind==='m')S(d,{background:'url(assets/mountain.jpg) 50% 35%/cover'});
+    else if(kind==='c')S(d,{background:'url(assets/city.jpg) center/cover'});
+    else{S(d,{background:'#FF4500'});d.innerHTML='<img src="assets/book.png" style="position:absolute;height:84%;left:50%;top:8%;transform:translateX(-50%) rotate(-4deg)">';}
+    return d;};
+  const I=$('trI');[[15,'m'],[235,'c'],[455,'b'],[675,'m']].forEach(([x,k],i)=>{const d=thumb(x,205,k);d.id='ti'+i;I.appendChild(d);});
+  const mk=(par,id,x,w,bg,col,n)=>{const d=document.createElement('div');d.className='clip';d.id=id;S(d,{left:x+'px',width:w+'px',background:bg});
+    const wv=document.createElement('div');wv.className='wave';for(let i=0;i<n;i++){const e=document.createElement('i');e.style.height=(30+70*rnd(i+(x)))+'%';e.style.background=col;wv.appendChild(e);}d.appendChild(wv);par.appendChild(d);return d;};
+  mk($('trM'),'tm0',250,590,'rgba(255,69,0,.18)','#FF4500',45);mk($('trM'),'tm1',850,600,'rgba(255,69,0,.18)','#FF4500',46);
+  const V=$('trV');const vc=(id,x,kinds)=>{const d=document.createElement('div');d.className='clip';d.id=id;S(d,{left:x+'px',width:(kinds.length*155)+'px',background:'#222',display:'flex',gap:'2px'});
+    kinds.forEach(k=>{const t=thumb(0,153,k);S(t,{position:'relative',top:0,left:0,height:'94px',flex:'0 0 153px',borderRadius:'2px'});d.appendChild(t);});V.appendChild(d);};
+  vc('tv0',485,['c','c','m']);vc('tv1',965,['b','m','b']);
+  const O=$('trO');[['to0',735,'“type a prompt…”'],['to1',1100,'“…motion made easy.”']].forEach(([id,x,txt])=>{const d=mk(O,id,x,355,'#FFB49A','rgba(120,40,20,.45)',30);
+    const s=document.createElement('div');s.className='mono';S(s,{position:'absolute',left:'14px',top:'34px',fontSize:'19px',color:'#2a1208'});s.textContent=txt;d.appendChild(s);});
+})();
+
+const CODE=[
+ [['k','export const '],['a','Launch'],['a',' = () => (']],
+ [['a','  '],['tg','<Scene '],['a','fps='],['n','{60}'],['a',' size='],['s','"16:9"'],['tg','>']],
+ [['a','    '],['tg','<Fill '],['a','color='],['s','"#FF3C00"'],['tg',' />']],
+ [['a','    '],['tg','<Title '],['a','text='],['s','"NEW"'],['tg',' />']],
+ [['a','    '],['tg','<Product '],['a','src='],['s','"book.png"'],['a',' spin'],['tg',' />']],
+ [['a','  '],['tg','</Scene>']],
+ [['a',')']],
+];
+const CODELEN=CODE.map(l=>l.reduce((s,x)=>s+x[1].length,0));
+const CODETOT=CODELEN.reduce((a,b)=>a+b,0);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function codeHTML(n,blink){let out='',left=n,curLine=0;
+  for(let i=0;i<CODE.length;i++){let line=`<span class="ln">${i+1}</span>`;
+    if(left>0||i===0){let rem=left;for(const [c,s] of CODE[i]){if(rem<=0)break;const piece=s.slice(0,rem);rem-=piece.length;line+=`<span class="${c}">${esc(piece)}</span>`;}
+      if(left<=CODELEN[i]){curLine=i;if(blink)line+='<span class="cur"></span>';left=0;}else left-=CODELEN[i];
+      if(i===2&&n>CODELEN[0]+CODELEN[1]+CODELEN[2]-1)line+='<span style="display:inline-block;width:20px;height:20px;background:#FF3C00;margin-left:14px;vertical-align:-2px"></span>';
+    }
+    out+=line+'\n';}
+  return {html:out,cur:curLine};}
+
+const tc=t=>{const f=Math.floor(t*30)%30,s=Math.floor(t);return `00:00:${String(s).padStart(2,'0')}:${String(f).padStart(2,'0')}`;};
+
+window.render=function(t){
+  const scenes={s1:[0,.5],s2:[.5,1],s3:[1,1.32],s4:[1.32,2.08],s5:[2.08,2.72],s6:[2.72,3.12],s7:[3.12,4.62],s8:[4.62,5.76],s9:[5.76,8.75],s10:[8.75,12.0],s11:[12.0,14.12],s12:[14.12,18.25],s13:[18.25,23.0],s14:[23.0,99]};
+  for(const k in scenes)show(k,t>=scenes[k][0]&&t<scenes[k][1]);
+  // chrome
+  const chromeOn=t<3.12||(t>=3.12&&t<5.76);
+  $('chrome').style.display=chromeOn?'block':'none';
+  $('chtc').textContent=tc(t);
+  const onOrange=(t<.5)||(t>=2.08&&t<2.72);
+  document.querySelectorAll('#chrome .br').forEach(e=>e.style.borderColor=onOrange?'rgba(0,0,0,.3)':(t>=1&&t<1.32?'rgba(0,0,0,.25)':'rgba(255,255,255,.35)'));
+  $('chl').style.color=onOrange||(t>=1&&t<1.32)?'rgba(0,0,0,.5)':'rgba(255,255,255,.55)';
+  $('chk').textContent=t<.5?'type':t<1?'make':t<1.32?'watch':t<2.08?'move':t<3.12?'launch · one prompt':'new prompt';
+  $('chl').style.display=t>=3.12?'none':'block';
+
+  // S1
+  if(t<.5){const k=ex(p(t,0,.22));S('s1t',{transform:`translateY(${(1-k)*110}%)`});}
+  // S2
+  if(t>=.5&&t<1){const k=ex(p(t,.5,.68));S('s2t',{transform:`translateX(${(1-k)*-500}px)`,filter:`blur(${(1-k)*30}px)`,opacity:.3+.7*k});
+    const g=p(t,.72,1);const sz=g<=0?0:lerp(130,4200,eio(Math.pow(g,1.4)));
+    S('s2sq',{width:sz+'px',height:sz+'px',left:(1640-sz/2)+'px',top:(560-sz/2)+'px',borderRadius:lerp(18,0,g)+'px',display:g>0?'block':'none'});}
+  // S3
+  if(t>=1&&t<1.32){const k=ex(p(t,1,1.14));S('s3t',{transform:`translateX(${(1-k)*-260}px) skewX(-8deg)`,filter:`blur(${(1-k)*18}px)`});
+    const g=eio(p(t,1.18,1.32));S('s3p',{left:lerp(1920,-140,g)+'px'});}
+  // S4
+  if(t>=1.32&&t<2.08){document.querySelectorAll('#s4 .mvl').forEach((e,i)=>{const k=ex(p(t,1.34+i*.09,1.56+i*.09));S(e,{transform:`translateY(${(1-k)*105}%)`});});
+    S('s4cur',{opacity:(t>1.7&&Math.floor(t*6)%2===0)||t<1.7?1:0.15,transform:`scaleY(${eo(p(t,1.6,1.72))})`});
+    S('s4labs',{opacity:p(t,1.6,1.75)});
+    const g=eio(p(t,1.94,2.08));S('s4p',{left:lerp(1920,-140,g)+'px'});}
+  // S5
+  if(t>=2.08&&t<2.72){const k=eo(p(t,2.08,2.72));S('s5in',{transform:`scale(${lerp(1.18,1.0,k)})`});
+    S('s5b',{transform:`translate(-50%,-52%) translateY(${Math.sin(t*4)*10}px) rotate(${lerp(-10,-4,k)}deg)`});
+    const c=eo(p(t,2.42,2.62));S('s5c',{top:lerp(1080,640,c)+'px',display:c>0?'block':'none'});}
+  // S6
+  if(t>=2.72&&t<3.12){const a=eo(p(t,2.72,2.8)),g=eio(p(t,2.94,3.08));
+    const full=[[0,0,640,1080],[640,0,640,1080],[1280,0,640,1080]];
+    const grid=[[120,170,540,330],[690,170,540,330],[1260,170,540,330],[120,540,540,330],[690,540,540,330],[1260,540,540,330]];
+    ['s6a','s6b','s6c','s6d','s6e','s6f'].forEach((id,i)=>{let r;
+      if(i<3){const f=full[i].slice();f[0]+=(1-a)*(600-i*100);r=f.map((v,j)=>lerp(v,grid[i][j],g));}
+      else{r=grid[i].slice();r[1]+=(1-g)*200;}
+      S(id,{left:r[0]+'px',top:r[1]+'px',width:r[2]+'px',height:r[3]+'px',borderRadius:(g*10)+'px',opacity:i<3?1:g,overflow:'hidden'});});
+    $('s6').style.background=g>0?'#0B0A0E':'#0B0A0E';}
+  // S7
+  if(t>=3.12&&t<4.62){const txt='make me a launch video';const n=Math.floor(cl((t-3.58)/.72)*txt.length);
+    const blink=Math.floor(t*3)%2===0||(t>3.58&&t<4.3);
+    const cur=`<span style="display:inline-block;width:16px;height:34px;background:#FF4500;vertical-align:-6px;margin-left:4px;opacity:${blink?1:0}"></span>`;
+    const sp=p(t,4.38,4.6);
+    $('s7t').innerHTML=`<span style="color:#FF4500">&gt;</span> <span style="letter-spacing:${sp*18}px;opacity:${1-sp}">${esc(txt.slice(0,n))}</span>${cur}`;
+    S('s7t',{filter:`blur(${sp*6}px)`});}
+  // S8
+  if(t>=4.62&&t<5.76){const a=eo(p(t,4.62,4.85));const f=p(t,4.86,4.98);const sc=lerp(.6,1,a)*lerp(1,1.45,eio(p(t,5.0,5.4)));
+    S('s8logo',{transform:`scale(${sc}) rotate(${lerp(0,-10,eio(p(t,5.0,5.4)))}deg)`,opacity:1-p(t,5.5,5.56)});
+    $('s8path').setAttribute('fill',f>0?`rgba(255,69,0,${f})`:'none');
+    const r=eo(p(t,4.9,5.45));S('s8ring',{width:lerp(160,520,r)+'px',height:lerp(160,520,r)+'px',opacity:(1-p(t,5.25,5.45))*(t>4.9?1:0)});
+    const q=p(t,5.46,5.76);const qs=q<=0?0:lerp(230,2600,eio(q));
+    S('s8sq',{width:qs+'px',height:qs*lerp(1,.62,q)+'px',borderRadius:lerp(40,0,q)+'px',transform:'none',display:q>0?'block':'none'});}
+  // S9
+  if(t>=5.76&&t<8.75){const w=$('s9w');let word,t0;
+    if(t<6.7){word='PROMPT.';t0=5.84}else if(t<7.22){word='CODE.';t0=6.7}else{word='MOTION.';t0=7.22}
+    if(w.textContent!==word)w.textContent=word;
+    blurIn(w,t,t0,.28,22);
+    S('s9u',{width:(word==='PROMPT.'?eo(p(t,6.36,6.56))*70:0)+'%'});
+    const gl=p(t,7.98,8.72);const G=$('s9g');
+    if(gl>0){w.style.opacity=0;let h='';const n=7;for(let i=0;i<n;i++){const off=(rnd(i*3+Math.floor(t*20))-.5)*900*gl+(i%2?1:-1)*gl*500;
+        h+=`<div style="position:absolute;left:0;right:0;top:${380+i*48}px;height:48px;overflow:hidden"><div class="big" style="position:absolute;left:0;right:0;top:${-i*48}px;height:330px;display:flex;align-items:center;justify-content:center;font-size:250px;color:#0B0A0E;transform:translateX(${off}px) skewX(${-14*gl}deg)">MOTION.</div></div>`;
+        h+=`<div style="position:absolute;left:${rnd(i+9)*400}px;width:${600+rnd(i+4)*900}px;top:${360+i*56}px;height:${3+rnd(i)*5}px;background:#0B0A0E"></div>`;}
+      G.innerHTML=h;}else G.innerHTML='';
+    $('s9').style.background=t>8.62?'#0B0A0E':'#FF4500';if(t>8.62)G.innerHTML='';}
+  // S10
+  if(t>=8.75&&t<12.0){const n=Math.floor(cl((t-9.0)/2.35)*CODETOT);const blink=t<11.35||Math.floor(t*3)%2===0;
+    const r=codeHTML(n,blink);$('s10code').innerHTML=r.html;S('s10hl',{top:(76+r.cur*46)+'px'});
+    const a=eo(p(t,8.75,9.35));const m=eio(p(t,11.35,11.8));
+    S('s10ed',{transform:`translate(${lerp(-80,0,a)+lerp(0,-40,m)}px,${lerp(80,0,a)+lerp(0,-150,m)}px) rotateY(${lerp(22,9,a)-m*3}deg) rotateX(${lerp(10,4,a)}deg) scale(${lerp(1,.78,m)})`,opacity:lerp(.2,1,a)*lerp(1,.85,m)});
+    blurIn('s10ci',t,9.38,.25,20);
+    const fr=p(t,9.95,10.15);S('s10frame',{opacity:fr,transform:`scale(${lerp(1.03,1,eo(fr))})`});
+    S('s10new',{opacity:eo(p(t,10.85,11.3))});
+    S('s10ghost',{opacity:.55*p(t,11.35,11.6),transform:`rotate(${Math.sin(t*3)*4-4}deg)`});
+    S('s10sel',{opacity:p(t,11.5,11.6)});}
+  // S11
+  if(t>=12.0&&t<14.12){const sc=p(t,12.0,12.3);
+    const z=eio(p(t,12.35,12.75));const ins=lerp(0,34,z);
+    S('s11card',{left:ins+'px',top:ins+'px',right:ins+'px',bottom:ins+'px',borderRadius:lerp(0,26,z)+'px',clipPath:`inset(0 ${(1-eo(sc))*100}% 0 0)`});
+    S('s11scan',{left:lerp(-40,1920,eo(sc))+'px',opacity:sc<1?1:0});
+    S('s11b',{transform:`translate(-50%,-50%) translateY(${Math.sin(t*2.4)*12}px) rotate(${-5+Math.sin(t*1.6)*2.5}deg)`});
+    const fo=p(t,13.3,13.55);S('s11fo',{opacity:1-fo,filter:`blur(${fo*10}px)`});}
+  // S12
+  if(t>=14.12&&t<18.25){
+    const K=[[14.12,3.69,388,372],[14.5,1.75,700,450],[15.35,1.75,820,470],[15.75,1.75,1020,560],[16.6,1.6,1150,560],[17.35,1.0,960,540],[18.3,1.0,960,540]];
+    let i=0;while(i<K.length-2&&t>=K[i+1][0])i++;const A=K[i],B=K[i+1];const k=eio(p(t,A[0],B[0]));
+    const s=lerp(A[1],B[1],k),cx=lerp(A[2],B[2],k),cy=lerp(A[3],B[3],k);
+    const vel=Math.abs(B[2]-A[2])+Math.abs(B[1]-A[1])*300;const bl=vel>50?Math.sin(Math.PI*k)*Math.min(4,vel/90):0;
+    S('s12cam',{transform:`translate(${960-cx*s}px,${540-cy*s}px) scale(${s})`,filter:`blur(${bl}px)`});
+    const lab=t<15.72?'Launches.':t<16.72?'Explainers.':'Brand films.';const L=$('s12lab');if(L.textContent!==lab)L.textContent=lab;
+    const lt=t<15.72?14.55:t<16.72?15.72:16.72;const lk=eo(p(t,lt,lt+.18));S(L,{opacity:lk,transform:`translateY(${(1-lk)*20}px)`});
+    S('g1b',{transform:`translate(-50%,-50%) translateY(${Math.sin(t*2.4)*5}px) rotate(${-5+Math.sin(t*1.6)*2.5}deg)`});
+    const words=['BOLD','FAST'];const wi=Math.floor((t-14.12)/0.8)%2;const W=$('g2w');if(W.textContent!==words[wi])W.textContent=words[wi];
+    const ph=((t-14.12)%0.8)/0.8;S(W,{transform:`scale(${1+.08*Math.sin(ph*Math.PI)})`,textShadow:`${-14+28*ph}px 6px 0 #FF4500`});
+    const hs=[38,52,44,68,56,100];document.querySelectorAll('#g3bars i').forEach((e,j)=>{e.style.height=hs[j]*eo(p(t,14.3+j*.12,14.9+j*.12))+'%';});
+    const n=$('g4n');if(n)n.setAttribute('cy',180+Math.sin(t*5)*10);}
+  // S13
+  if(t>=18.25&&t<23.0){
+    const titles=[[18.62,'Images.'],[19.18,'Music.'],[19.7,'Video.'],[20.42,'Voiceover.'],[21.2,'All from <span style="color:#FF4500">one prompt.</span>']];
+    let j=-1;titles.forEach((x,i)=>{if(t>=x[0])j=i;});const T=$('s13t');
+    if(j<0){T.style.opacity=0}else{const h=titles[j][1];if(T.dataset.h!==h){T.innerHTML=h;T.dataset.h=h;}T.style.color=j===4?'#fff':'#FF4500';blurIn(T,t,titles[j][0],.22,16);}
+    S('s13badge',{opacity:p(t,19.15,19.35)});
+    S('s13rows',{opacity:p(t,18.3,18.55)});
+    [18.75,19.05,19.72,20.2].forEach((a,i)=>S('ti'+i,{opacity:p(t,a,a+.12),transform:`scale(${lerp(.85,1,eo(p(t,a,a+.18)))})`}));
+    const rev=(id,a,b)=>S(id,{clipPath:`inset(0 ${(1-p(t,a,b))*100}% 0 0)`,opacity:t>=a?1:0});
+    rev('tm0',19.15,19.9);rev('tm1',19.9,21.4);rev('tv0',19.7,20.4);rev('tv1',20.95,21.6);rev('to0',20.42,20.95);rev('to1',21.0,21.6);
+    const ph=eio(p(t,18.4,22.0));S('s13ph',{left:lerp(370,1795,ph)+'px',opacity:p(t,18.3,18.5)});
+    const pc=Math.round(100*p(t,18.4,22.0));$('s13pc').textContent=pc+'%';$('s13bar').style.width=pc+'%';$('s13rl').textContent=pc>=100?'ready':'rendering…';
+    const wp=eio(p(t,22.68,22.85));S('s13wipe',{left:lerp(1920,0,wp)+'px'});}
+  // S14
+  if(t>=23.0){
+    const W=$('s14w');let word,t0,col='#fff';
+    if(t<23.45){word='Describe it.';t0=22.98}else if(t<23.95){word='Direct it.';t0=23.45}else{word='Ship it.';t0=23.95;col='#FF4500'}
+    if(W.textContent!==word)W.textContent=word;W.style.color=col;
+    const out=p(t,24.55,24.72);blurIn(W,t,t0,.22,24);if(out>0)S(W,{opacity:1-out,filter:`blur(${out*12}px)`});
+    $('s14').style.background=t<23.12?`rgb(${lerp(160,11,p(t,23,23.12))},${lerp(158,10,p(t,23,23.12))},${lerp(156,14,p(t,23,23.12))})`:'#0B0A0E';
+    const drop=eb(p(t,24.3,24.55));const mv=eio(p(t,24.62,24.85));
+    S('s14brand',{display:t>=24.3?'block':'none'});
+    // logo: drop onto "Ship it." then slide into lockup
+    S('s14logo',{transform:`translate(${lerp(260,0,mv)}px,${lerp(lerp(-500,-30,drop),0,mv)}px) scale(${lerp(.55,1,mv)})`});
+    S('s14word',{transform:`translateY(${(1-eo(p(t,24.7,24.95)))*110}%)`});
+    S('s14lw',{transform:`translateX(${lerp(-150,0,mv)}px)`});
+    S("s14anim",{transform:`translateY(${(1-eo(p(t,25.1,25.35)))*170}%)`});
+    $('s14ul').style.width=(eo(p(t,25.6,25.9))*100)+'%';
+    const tag='type a prompt. motion made easy.';$('s14tag').textContent=tag.slice(0,Math.floor(tag.length*p(t,25.45,26.2)));
+    const fo=p(t,27.05,27.35);S('s14brand',{opacity:1-fo,filter:`blur(${fo*14}px)`});
+    $('s14end').innerHTML=t>=27.4?`&gt; <span style="display:inline-block;width:16px;height:34px;background:#FF4500;vertical-align:-6px;opacity:${Math.floor(t*3)%2?0:1}"></span>`:'';
+    S('s14w',{display:t<24.75?'block':'none'});}
+};
+window.render(0);
+</script>
+</body></html>
