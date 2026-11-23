@@ -195,6 +195,8 @@ banana-claude/                         # Claude Code Plugin
 │       ├── cost_tracker.py           # Cost logging and summaries
 │       ├── presets.py                # Brand/style preset management
 │       └── batch.py                  # CSV batch workflow parser
+├── skills/3d-animation-director/      # Storyboard + AI video prompts for 3D animation
+│   └── SKILL.md
 └── agents/
     └── brief-constructor.md           # Subagent for prompt construction
 ```
