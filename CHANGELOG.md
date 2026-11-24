@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `3d-animation-director` skill: turns a story idea into a style/character bible, a shot-by-shot storyboard (camera, lens, motion, lighting, SFX) and ready-to-paste AI video prompts; hands keyframe generation off to `/banana`
 
+### Changed
+- `3d-animation-director` restructured: steps with completion criteria, a verbatim character *anchor* in every prompt, self-contained prompts, keyframe workflow moved to `references/keyframes.md`
+
 ## [1.4.1] - 2026-03-27
 
 ### Changed

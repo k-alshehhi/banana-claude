@@ -196,7 +196,8 @@ banana-claude/                         # Claude Code Plugin
 │       ├── presets.py                # Brand/style preset management
 │       └── batch.py                  # CSV batch workflow parser
 ├── skills/3d-animation-director/      # Storyboard + AI video prompts for 3D animation
-│   └── SKILL.md
+│   ├── SKILL.md
+│   └── references/keyframes.md        # Keyframe stills via /banana
 └── agents/
     └── brief-constructor.md           # Subagent for prompt construction
 ```
